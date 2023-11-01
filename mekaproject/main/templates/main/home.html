@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Портфолио</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}">
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+        {
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/портфолио">Портфолио</a></li>
+        </ul>
+    </nav>
+<main class="cyrot">
+    <img src="{% static 'main/img/meka.jpg' %}" alt="">
+    <div class="divbek">
+        <h1 class="name">Привет! Я Мээризат</h1>
+        <p class="description">Я занимаюсь веб-разработкой и готов показать вам мои проекты!</p>
+    </div>
+
+</main>
+    <div class="mane">
+        <div class="contact-form">
+        <h2>Свяжитесь со мной</h2>
+        <form method="post" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Имя:</label>
+                <input type="text" name="name" id="id_name" required>
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" id="id_email" required>
+            </div>
+            <div class="form-group">
+                <label for="id_phone">Телефон:</label>
+                <input type="text" name="phone" id="id_phone">
+            </div>
+            <div class="form-group">
+                <label for="id_message">Сообщение:</label>
+                <textarea name="message" id="id_message" required></textarea>
+            </div>
+            <button class="optn" type="submit">Отправить</button>
+        </form>
+    </div>
+
+    </div>
+
+
+</body>
+</html>
